@@ -1,1 +1,63 @@
-Data Structure
+/* Conteudo voltado para aprendizado da Linguagem Java, que por sua vez é uma linguagem altamente tipada e possui modelo voltado para POO.
+*/
+
+
+public class Main {
+  	public static void main(String[] args) {
+    		System.out.println("isso é um print!");
+  }
+}
+
+public class Main {
+  	public static String main(String[] args) {
+ 		return "isso é um return!" ;
+  }
+}
+
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+    HashMap<String, String> loginMap = new HashMap<>();
+    loginMap.put("Rafael", "Rafael");
+    loginMap.put("Rafa", "Rafael");
+    loginMap.put("rafael", "Rafael");
+    loginMap.put("rafa", "Rafael");
+    loginMap.put("rafinha", "Rafael");
+    loginMap.put("Cachorrão", "Rafael");
+
+
+    //hashmap do User
+    HashMap<String, String> userMap = new HashMap<>();
+    userMap.put("Mariana", "Mariana");
+    userMap.put("Mari", "Mariana");
+    userMap.put("mariana", "Mariana");
+    userMap.put("mari", "Mariana");
+    userMap.put("Daniel", "Daniel");
+    userMap.put("Dan", "Daniel");
+    userMap.put("daniel", "Daniel");
+    userMap.put("dan", "Daniel");
+    
+    // login atual
+    String login = "dan";
+
+    // verify do login
+    boolean acessoLiberado = false;
+    if (loginMap.containsKey(login.toLowerCase())) {
+        String loginPrincipal = loginMap.get(login.toLowerCase());
+        if (loginPrincipal.equals("Rafael")) {
+            acessoLiberado = true;
+            System.out.println("Acesso liberado para Admin");
+        }
+    }
+
+    if (!acessoLiberado && userMap.containsKey(login.toLowerCase())) {
+        acessoLiberado = true;
+        System.out.println("Acesso liberado para User");
+    }
+
+    if (!acessoLiberado) {
+        System.out.println("Acesso negado");
+    }
+    }
+    }
